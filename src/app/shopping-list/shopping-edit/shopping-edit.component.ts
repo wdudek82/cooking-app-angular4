@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-shopping-edit',
   templateUrl: './shopping-edit.component.html',
@@ -9,7 +10,7 @@ export class ShoppingEditComponent implements OnInit {
 
   @Input()
   public ingredientName = '';
-  public ingredientAmount = 0;
+  public ingredientAmount = null;
 
   constructor() { }
 
@@ -17,7 +18,9 @@ export class ShoppingEditComponent implements OnInit {
   }
 
   onAddIngredient(name, amount) {
-    console.log(name, amount);
+    console.log(this.ingredientName, this.ingredientAmount);
+    this.ingredientName = '';
+    this.ingredientAmount = null;
   }
 
 }

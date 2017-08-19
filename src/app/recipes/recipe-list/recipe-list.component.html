@@ -1,7 +1,18 @@
 <div class="row">
   <div class="col-xs-12">
-    <button class="btn btn-success">New Recipe</button>
+    <button
+      class="btn btn-success"
+      (click)="arr.push(1 + arr[arr.length-1] || 1)"
+    >New Recipe</button>
+    <button class="btn btn-danger" (click)="arr.splice(-1, 1)">Delete Last</button>
   </div>
+  <hr>
+  <a
+    class="list-group-item"
+    *ngFor="let item of arr; let i = index"
+    (click)="arr.splice(i, 1)">
+    item no. {{ item }} :: {{ i }}
+  </a>
 </div>
 
 <hr>

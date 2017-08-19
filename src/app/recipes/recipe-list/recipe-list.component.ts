@@ -26,6 +26,8 @@ export class RecipeListComponent implements OnInit {
     ),
   ];
 
+  public arr = [];
+
   constructor() {}
 
   ngOnInit() {}
